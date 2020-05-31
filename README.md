@@ -4,7 +4,7 @@ A responsive qrcode generator Flutter project.
 
 ## Notes 
 
-- The ssid and password will work only when the user presses enter and on change
+- The ssid and password will work only when the user presses enter and not onchange
 
 ## Todo
 
