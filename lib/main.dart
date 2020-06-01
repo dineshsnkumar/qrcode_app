@@ -39,6 +39,7 @@ class _HomePageStateState extends State<HomePageState> {
   String _ssid = '';
   String _pwd = '';
   String _qrcoderep = '';
+  bool _enable_generateQRCode = false;
 
   @override
   Widget build(BuildContext context) {
@@ -73,10 +74,9 @@ class _HomePageStateState extends State<HomePageState> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: InputDecoration(
-                hintText: 'Password',
-              ),
-              // Similar to _ssid this works only when the user clicks enters 
+              decoration: InputDecoration(hintText: 'Password'),
+              obscureText: true,
+              // Similar to _ssid this works only when the user clicks enters
               onFieldSubmitted: (String pwd) {
                 setState(() {
                   _pwd = pwd;
@@ -120,12 +120,7 @@ class _HomePageStateState extends State<HomePageState> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: () {
-                print('Generate QR Code pressed  $_qrcoderep');
-                setState(() {
-                  _qrcoderep = '{"ssid":"$_ssid","pwd":"$_pwd"}';
-                });
-              },
+              onPressed: null,
             ),
           ),
         ),
